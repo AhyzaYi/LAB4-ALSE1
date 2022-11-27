@@ -1,0 +1,3 @@
+/home/alse/Documents/laboratorio4./CMakeFiles/laboratorio4.bin.dir
+/home/alse/Documents/laboratorio4./CMakeFiles/edit_cache.dir
+/home/alse/Documents/laboratorio4./CMakeFiles/rebuild_cache.dir

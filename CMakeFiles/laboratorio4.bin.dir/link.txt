@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/laboratorio4.bin.dir/src/main.cpp.o CMakeFiles/laboratorio4.bin.dir/src/funciones_gr1.cpp.o CMakeFiles/laboratorio4.bin.dir/src/config_tty.cpp.o -o bin/laboratorio4.bin 
