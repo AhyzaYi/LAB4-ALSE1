@@ -1,207 +1,84 @@
 \hypertarget{main_8cpp}{}\section{src/main.cpp File Reference}
 \label{main_8cpp}\index{src/main.\+cpp@{src/main.\+cpp}}
-{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}tty\+\_\+lib2.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lib\+\_\+grupo1.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup} ()
-\item 
-void \hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop} ()
-\end{DoxyCompactItemize}
-\subsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-int \hyperlink{main_8cpp_af8b8301b5030eaf612289cea2695d3b5}{button\+Pin} = A5
-\item 
-int \hyperlink{main_8cpp_aad85c7cd94869105436547558fd4fcaa}{Pin\+Yellow} = 8
-\item 
-int \hyperlink{main_8cpp_a63a42f683b86542af624ce6978a9deae}{Pin\+Green} = 9
-\item 
-int \hyperlink{main_8cpp_a7671318f678f6706818a5d6d8f047125}{Pin\+Red} = 10
-\item 
-char \hyperlink{main_8cpp_a60fa1e04850abb40cf574003f5e46719}{int\+Pin}
-\item 
-int \hyperlink{main_8cpp_a8abe07631df9645f55b4aae910bb730c}{cant}
-\item 
-char \hyperlink{main_8cpp_a11764cc96bb263d1f257bcc01205a787}{flag}
-\item 
-int \hyperlink{main_8cpp_a89f234133d3efe315836311cbf21c64b}{state}
+int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{main_8cpp_afe461d27b9c48d5921c00d521181f12f}\label{main_8cpp_afe461d27b9c48d5921c00d521181f12f}} 
-\index{main.\+cpp@{main.\+cpp}!loop@{loop}}
-\index{loop@{loop}!main.\+cpp@{main.\+cpp}}
-\subsubsection{\texorpdfstring{loop()}{loop()}}
-{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 22 of file main.\+cpp.
-
-
-\begin{DoxyCode}
-23 \{
-24   \textcolor{comment}{// Se verifica si hay dato de entrada}
-25   \textcolor{keywordflow}{if} (Serial.available() > 0)
-26   \{
-27       \textcolor{comment}{//Se lee el dato de entrada}
-28       \hyperlink{main_8cpp_a60fa1e04850abb40cf574003f5e46719}{intPin} = Serial.read();
-29       
-30       \textcolor{keywordflow}{switch}(\hyperlink{main_8cpp_a60fa1e04850abb40cf574003f5e46719}{intPin})
-31       \{
-32         \textcolor{keywordflow}{case}\textcolor{charliteral}{'s'}:
-33           digitalWrite(\hyperlink{main_8cpp_a7671318f678f6706818a5d6d8f047125}{PinRed}, LOW);
-34           digitalWrite(\hyperlink{main_8cpp_a63a42f683b86542af624ce6978a9deae}{PinGreen}, LOW);
-35           digitalWrite(\hyperlink{main_8cpp_aad85c7cd94869105436547558fd4fcaa}{PinYellow}, HIGH);
-36           \hyperlink{main_8cpp_a11764cc96bb263d1f257bcc01205a787}{flag} = \textcolor{charliteral}{'s'};
-37           \textcolor{keywordflow}{break};
-38 
-39         \textcolor{keywordflow}{case}\textcolor{charliteral}{'r'}:
-40           digitalWrite(\hyperlink{main_8cpp_a7671318f678f6706818a5d6d8f047125}{PinRed}, LOW);
-41           digitalWrite(\hyperlink{main_8cpp_a63a42f683b86542af624ce6978a9deae}{PinGreen}, HIGH);
-42           digitalWrite(\hyperlink{main_8cpp_aad85c7cd94869105436547558fd4fcaa}{PinYellow}, LOW);
-43           \hyperlink{main_8cpp_a11764cc96bb263d1f257bcc01205a787}{flag} = \textcolor{charliteral}{'r'};
-44           \textcolor{keywordflow}{break};
-45 
-46         \textcolor{keywordflow}{case}\textcolor{charliteral}{'S'}:
-47           Serial.write(\hyperlink{main_8cpp_a8abe07631df9645f55b4aae910bb730c}{cant});
-48           digitalWrite(\hyperlink{main_8cpp_a7671318f678f6706818a5d6d8f047125}{PinRed}, HIGH);
-49           digitalWrite(\hyperlink{main_8cpp_a63a42f683b86542af624ce6978a9deae}{PinGreen}, LOW);
-50           digitalWrite(\hyperlink{main_8cpp_aad85c7cd94869105436547558fd4fcaa}{PinYellow}, LOW);
-51           \hyperlink{main_8cpp_a11764cc96bb263d1f257bcc01205a787}{flag} = \textcolor{charliteral}{'S'};
-52           \hyperlink{main_8cpp_a8abe07631df9645f55b4aae910bb730c}{cant} = 0;
-53           \textcolor{keywordflow}{break};
-54 
-55         \textcolor{keywordflow}{default}:
-56           digitalWrite(\hyperlink{main_8cpp_a7671318f678f6706818a5d6d8f047125}{PinRed}, LOW);
-57           digitalWrite(\hyperlink{main_8cpp_a63a42f683b86542af624ce6978a9deae}{PinGreen}, LOW);
-58           digitalWrite(\hyperlink{main_8cpp_aad85c7cd94869105436547558fd4fcaa}{PinYellow}, LOW);
-59           \textcolor{keywordflow}{break};
-60       \}
-61   \} 
-62   \textcolor{keywordflow}{else}
-63   \{
-64     \textcolor{keywordflow}{if} (\hyperlink{main_8cpp_a11764cc96bb263d1f257bcc01205a787}{flag} == \textcolor{charliteral}{'r'})
-65       \{
-66         \hyperlink{main_8cpp_a89f234133d3efe315836311cbf21c64b}{state} = digitalRead(\hyperlink{main_8cpp_af8b8301b5030eaf612289cea2695d3b5}{buttonPin});
-67         \textcolor{keywordflow}{if} (\hyperlink{main_8cpp_a89f234133d3efe315836311cbf21c64b}{state} == 1)
-68         \{
-69           \hyperlink{main_8cpp_a8abe07631df9645f55b4aae910bb730c}{cant} = \hyperlink{main_8cpp_a8abe07631df9645f55b4aae910bb730c}{cant} + 1;
-70         \}
-71         \textcolor{keywordflow}{while}(digitalRead(\hyperlink{main_8cpp_af8b8301b5030eaf612289cea2695d3b5}{buttonPin})==1)
-72         \{
-73         \}
-74         \textcolor{keywordflow}{while}(digitalRead(\hyperlink{main_8cpp_af8b8301b5030eaf612289cea2695d3b5}{buttonPin})==0)
-75         \{
-76         \}
-77       \}
-78   \}
-79 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}\label{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}} 
-\index{main.\+cpp@{main.\+cpp}!setup@{setup}}
-\index{setup@{setup}!main.\+cpp@{main.\+cpp}}
-\subsubsection{\texorpdfstring{setup()}{setup()}}
-{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 12 of file main.\+cpp.
-
-
-\begin{DoxyCode}
-13 \{
-14   \textcolor{comment}{// Configuración de pines:}
-15   Serial.begin(9600);
-16 
-17   pinMode(\hyperlink{main_8cpp_af8b8301b5030eaf612289cea2695d3b5}{buttonPin}, INPUT);
-18   pinMode(\hyperlink{main_8cpp_aad85c7cd94869105436547558fd4fcaa}{PinYellow}, OUTPUT);
-19   pinMode(\hyperlink{main_8cpp_a63a42f683b86542af624ce6978a9deae}{PinGreen}, OUTPUT);
-20   pinMode(\hyperlink{main_8cpp_a7671318f678f6706818a5d6d8f047125}{PinRed}, OUTPUT);
-21 \}
-\end{DoxyCode}
-
-
-\subsection{Variable Documentation}
-\mbox{\Hypertarget{main_8cpp_af8b8301b5030eaf612289cea2695d3b5}\label{main_8cpp_af8b8301b5030eaf612289cea2695d3b5}} 
-\index{main.\+cpp@{main.\+cpp}!button\+Pin@{button\+Pin}}
-\index{button\+Pin@{button\+Pin}!main.\+cpp@{main.\+cpp}}
-\subsubsection{\texorpdfstring{button\+Pin}{buttonPin}}
-{\footnotesize\ttfamily int button\+Pin = A5}
-
-
-
-Definition at line 3 of file main.\+cpp.
-
-\mbox{\Hypertarget{main_8cpp_a8abe07631df9645f55b4aae910bb730c}\label{main_8cpp_a8abe07631df9645f55b4aae910bb730c}} 
-\index{main.\+cpp@{main.\+cpp}!cant@{cant}}
-\index{cant@{cant}!main.\+cpp@{main.\+cpp}}
-\subsubsection{\texorpdfstring{cant}{cant}}
-{\footnotesize\ttfamily int cant}
-
-
-
-Definition at line 8 of file main.\+cpp.
-
-\mbox{\Hypertarget{main_8cpp_a11764cc96bb263d1f257bcc01205a787}\label{main_8cpp_a11764cc96bb263d1f257bcc01205a787}} 
-\index{main.\+cpp@{main.\+cpp}!flag@{flag}}
-\index{flag@{flag}!main.\+cpp@{main.\+cpp}}
-\subsubsection{\texorpdfstring{flag}{flag}}
-{\footnotesize\ttfamily char flag}
-
-
-
-Definition at line 9 of file main.\+cpp.
-
-\mbox{\Hypertarget{main_8cpp_a60fa1e04850abb40cf574003f5e46719}\label{main_8cpp_a60fa1e04850abb40cf574003f5e46719}} 
-\index{main.\+cpp@{main.\+cpp}!int\+Pin@{int\+Pin}}
-\index{int\+Pin@{int\+Pin}!main.\+cpp@{main.\+cpp}}
-\subsubsection{\texorpdfstring{int\+Pin}{intPin}}
-{\footnotesize\ttfamily char int\+Pin}
-
-
-
-Definition at line 7 of file main.\+cpp.
-
-\mbox{\Hypertarget{main_8cpp_a63a42f683b86542af624ce6978a9deae}\label{main_8cpp_a63a42f683b86542af624ce6978a9deae}} 
-\index{main.\+cpp@{main.\+cpp}!Pin\+Green@{Pin\+Green}}
-\index{Pin\+Green@{Pin\+Green}!main.\+cpp@{main.\+cpp}}
-\subsubsection{\texorpdfstring{Pin\+Green}{PinGreen}}
-{\footnotesize\ttfamily int Pin\+Green = 9}
-
-
-
-Definition at line 5 of file main.\+cpp.
-
-\mbox{\Hypertarget{main_8cpp_a7671318f678f6706818a5d6d8f047125}\label{main_8cpp_a7671318f678f6706818a5d6d8f047125}} 
-\index{main.\+cpp@{main.\+cpp}!Pin\+Red@{Pin\+Red}}
-\index{Pin\+Red@{Pin\+Red}!main.\+cpp@{main.\+cpp}}
-\subsubsection{\texorpdfstring{Pin\+Red}{PinRed}}
-{\footnotesize\ttfamily int Pin\+Red = 10}
+\mbox{\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
 
 
 Definition at line 6 of file main.\+cpp.
 
-\mbox{\Hypertarget{main_8cpp_aad85c7cd94869105436547558fd4fcaa}\label{main_8cpp_aad85c7cd94869105436547558fd4fcaa}} 
-\index{main.\+cpp@{main.\+cpp}!Pin\+Yellow@{Pin\+Yellow}}
-\index{Pin\+Yellow@{Pin\+Yellow}!main.\+cpp@{main.\+cpp}}
-\subsubsection{\texorpdfstring{Pin\+Yellow}{PinYellow}}
-{\footnotesize\ttfamily int Pin\+Yellow = 8}
 
-
-
-Definition at line 4 of file main.\+cpp.
-
-\mbox{\Hypertarget{main_8cpp_a89f234133d3efe315836311cbf21c64b}\label{main_8cpp_a89f234133d3efe315836311cbf21c64b}} 
-\index{main.\+cpp@{main.\+cpp}!state@{state}}
-\index{state@{state}!main.\+cpp@{main.\+cpp}}
-\subsubsection{\texorpdfstring{state}{state}}
-{\footnotesize\ttfamily int state}
-
-
-
-Definition at line 10 of file main.\+cpp.
-
+\begin{DoxyCode}
+6                                 \{
+7     
+8     \textcolor{keywordtype}{int} cant\_per = 0;
+9         \textcolor{keywordtype}{int} cont = 0;
+10     \textcolor{keywordtype}{int} read\_buf = 0;
+11     std::string name;
+12     
+13     \textcolor{keywordtype}{string} nombre;
+14     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} identificador;
+15 
+16     \textcolor{comment}{//Verificar la cantidad de argumentos}
+17         \textcolor{keywordtype}{float} tiempo\_preparacion;
+18         \textcolor{keywordtype}{float} tiempo\_lectura;
+19 
+20     \textcolor{keywordflow}{if}( argc =!3)
+21         \{
+22                 cout << \textcolor{stringliteral}{"Cantidad erronea de argumentos"}<< endl;
+23         \}
+24         \textcolor{keywordflow}{else}
+25         \{
+26                 tiempo\_preparacion = atof(argv[1]);
+27                 tiempo\_lectura = atof(argv[2]);
+28         \}
+29 
+30     std::cout << \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)tIngrese la cantidad de participantes: "};
+31         std::cin >> cant\_per;
+32     
+33         \hyperlink{classParticipante}{Participante} participantes[cant\_per];
+34 
+35     \textcolor{keywordflow}{for} (cont; cont < cant\_per; cont++)\{
+36         std::cout << \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)tIngrese el nombre del participante "}<< cont+1 <<\textcolor{stringliteral}{": "};
+37         std::cin >> nombre;
+38         std::cout << \textcolor{stringliteral}{"\(\backslash\)tIngrese el ID del participante "}<< cont+1 <<\textcolor{stringliteral}{": "};
+39         std::cin >> identificador;
+40 
+41         participantes[cont].\hyperlink{classParticipante_a35e316f68e68fad881634be797a29000}{set\_participant}(identificador, nombre);
+42         
+43         read\_buf = \hyperlink{lib__grupo1_8h_a20f8bcbffba7f47b6151297cec1d111e}{jugar}(tiempo\_preparacion, tiempo\_lectura);
+44         participantes[cont].\hyperlink{classParticipante_a1a0ce183171c0b6b3ec8f0aab3ed9b75}{set\_pushed}((\textcolor{keywordtype}{char})read\_buf);
+45         
+46         
+47         
+48     \};
+49     
+50     \textcolor{comment}{//Resultados}
+51     \textcolor{keywordflow}{for} (cont=0; cont < cant\_per; cont++)
+52     \{
+53         std::cout<<\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)tEl nombre del participante "}<<cont+1<<\textcolor{stringliteral}{" es: "}<<participantes[cont].
+      \hyperlink{classParticipante_a693b2864e7d79fb64765b678f92d64e9}{get\_nombre}()<<endl;
+54             std::cout<<\textcolor{stringliteral}{"\(\backslash\)tEl id del participante "}<<cont+1<<\textcolor{stringliteral}{" es: "}<<participantes[cont].
+      \hyperlink{classParticipante_ab39d927b0395b10236db2e68dbc21591}{get\_identificacion}()<<endl;
+55         std::cout<<\textcolor{stringliteral}{"\(\backslash\)tEl numero de pulsaciones es: "}<<participantes[cont].
+      \hyperlink{classParticipante_ac466291837016af5a0fc0cf0d0fbaf00}{get\_cant\_pulsador}()<<endl;
+56 
+57     \}
+58     \textcolor{keywordflow}{return} 0;
+59 \}
+\end{DoxyCode}

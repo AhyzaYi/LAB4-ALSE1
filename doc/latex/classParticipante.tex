@@ -1,0 +1,155 @@
+\hypertarget{classParticipante}{}\section{Participante Class Reference}
+\label{classParticipante}\index{Participante@{Participante}}
+
+
+{\ttfamily \#include $<$lib\+\_\+grupo1.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classParticipante_a24ab9aed90b8957e5c8cb663ab49f78d}{Participante} ()
+\item 
+\hyperlink{classParticipante_ac84681fe84456274ce473271e7f7c142}{Participante} (unsigned int id, string nom)
+\item 
+void \hyperlink{classParticipante_a35e316f68e68fad881634be797a29000}{set\+\_\+participant} (unsigned int id, string nom)
+\item 
+void \hyperlink{classParticipante_a1a0ce183171c0b6b3ec8f0aab3ed9b75}{set\+\_\+pushed} (unsigned int cant)
+\item 
+unsigned int \hyperlink{classParticipante_ab39d927b0395b10236db2e68dbc21591}{get\+\_\+identificacion} ()
+\item 
+string \hyperlink{classParticipante_a693b2864e7d79fb64765b678f92d64e9}{get\+\_\+nombre} ()
+\item 
+unsigned int \hyperlink{classParticipante_ac466291837016af5a0fc0cf0d0fbaf00}{get\+\_\+cant\+\_\+pulsador} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file lib\+\_\+grupo1.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classParticipante_a24ab9aed90b8957e5c8cb663ab49f78d}\label{classParticipante_a24ab9aed90b8957e5c8cb663ab49f78d}} 
+\index{Participante@{Participante}!Participante@{Participante}}
+\index{Participante@{Participante}!Participante@{Participante}}
+\subsubsection{\texorpdfstring{Participante()}{Participante()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Participante\+::\+Participante (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file funciones\+\_\+gr1.\+cpp.
+
+
+\begin{DoxyCode}
+5 \{\}
+\end{DoxyCode}
+\mbox{\Hypertarget{classParticipante_ac84681fe84456274ce473271e7f7c142}\label{classParticipante_ac84681fe84456274ce473271e7f7c142}} 
+\index{Participante@{Participante}!Participante@{Participante}}
+\index{Participante@{Participante}!Participante@{Participante}}
+\subsubsection{\texorpdfstring{Participante()}{Participante()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Participante\+::\+Participante (\begin{DoxyParamCaption}\item[{unsigned int}]{id,  }\item[{string}]{nom }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file funciones\+\_\+gr1.\+cpp.
+
+
+\begin{DoxyCode}
+7                                                      \{
+8     nombre = nom;
+9     identificacion = id;
+10     cant\_pulsador = 0;
+11 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classParticipante_ac466291837016af5a0fc0cf0d0fbaf00}\label{classParticipante_ac466291837016af5a0fc0cf0d0fbaf00}} 
+\index{Participante@{Participante}!get\+\_\+cant\+\_\+pulsador@{get\+\_\+cant\+\_\+pulsador}}
+\index{get\+\_\+cant\+\_\+pulsador@{get\+\_\+cant\+\_\+pulsador}!Participante@{Participante}}
+\subsubsection{\texorpdfstring{get\+\_\+cant\+\_\+pulsador()}{get\_cant\_pulsador()}}
+{\footnotesize\ttfamily unsigned int Participante\+::get\+\_\+cant\+\_\+pulsador (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 31 of file funciones\+\_\+gr1.\+cpp.
+
+
+\begin{DoxyCode}
+31                                             \{
+32     \textcolor{keywordflow}{return} cant\_pulsador;   
+33 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classParticipante_ab39d927b0395b10236db2e68dbc21591}\label{classParticipante_ab39d927b0395b10236db2e68dbc21591}} 
+\index{Participante@{Participante}!get\+\_\+identificacion@{get\+\_\+identificacion}}
+\index{get\+\_\+identificacion@{get\+\_\+identificacion}!Participante@{Participante}}
+\subsubsection{\texorpdfstring{get\+\_\+identificacion()}{get\_identificacion()}}
+{\footnotesize\ttfamily unsigned int Participante\+::get\+\_\+identificacion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 23 of file funciones\+\_\+gr1.\+cpp.
+
+
+\begin{DoxyCode}
+23                                              \{
+24     \textcolor{keywordflow}{return} identificacion;      
+25 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classParticipante_a693b2864e7d79fb64765b678f92d64e9}\label{classParticipante_a693b2864e7d79fb64765b678f92d64e9}} 
+\index{Participante@{Participante}!get\+\_\+nombre@{get\+\_\+nombre}}
+\index{get\+\_\+nombre@{get\+\_\+nombre}!Participante@{Participante}}
+\subsubsection{\texorpdfstring{get\+\_\+nombre()}{get\_nombre()}}
+{\footnotesize\ttfamily string Participante\+::get\+\_\+nombre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 27 of file funciones\+\_\+gr1.\+cpp.
+
+
+\begin{DoxyCode}
+27                                \{
+28     \textcolor{keywordflow}{return} nombre;
+29 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classParticipante_a35e316f68e68fad881634be797a29000}\label{classParticipante_a35e316f68e68fad881634be797a29000}} 
+\index{Participante@{Participante}!set\+\_\+participant@{set\+\_\+participant}}
+\index{set\+\_\+participant@{set\+\_\+participant}!Participante@{Participante}}
+\subsubsection{\texorpdfstring{set\+\_\+participant()}{set\_participant()}}
+{\footnotesize\ttfamily void Participante\+::set\+\_\+participant (\begin{DoxyParamCaption}\item[{unsigned int}]{id,  }\item[{string}]{nom }\end{DoxyParamCaption})}
+
+
+
+Definition at line 14 of file funciones\+\_\+gr1.\+cpp.
+
+
+\begin{DoxyCode}
+14                                                              \{
+15     nombre = nom;
+16     identificacion = id;
+17 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classParticipante_a1a0ce183171c0b6b3ec8f0aab3ed9b75}\label{classParticipante_a1a0ce183171c0b6b3ec8f0aab3ed9b75}} 
+\index{Participante@{Participante}!set\+\_\+pushed@{set\+\_\+pushed}}
+\index{set\+\_\+pushed@{set\+\_\+pushed}!Participante@{Participante}}
+\subsubsection{\texorpdfstring{set\+\_\+pushed()}{set\_pushed()}}
+{\footnotesize\ttfamily void Participante\+::set\+\_\+pushed (\begin{DoxyParamCaption}\item[{unsigned int}]{cant }\end{DoxyParamCaption})}
+
+
+
+Definition at line 19 of file funciones\+\_\+gr1.\+cpp.
+
+
+\begin{DoxyCode}
+19                                               \{
+20     cant\_pulsador = cant;
+21 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{lib__grupo1_8h}{lib\+\_\+grupo1.\+h}\item 
+src/\hyperlink{funciones__gr1_8cpp}{funciones\+\_\+gr1.\+cpp}\end{DoxyCompactItemize}

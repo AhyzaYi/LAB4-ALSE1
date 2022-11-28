@@ -1,0 +1,64 @@
+\hypertarget{lib__grupo1_8h}{}\section{include/lib\+\_\+grupo1.h File Reference}
+\label{lib__grupo1_8h}\index{include/lib\+\_\+grupo1.\+h@{include/lib\+\_\+grupo1.\+h}}
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classParticipante}{Participante}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{lib__grupo1_8h_a69c97039c9ec10a30e5edbdf365e3bbd}{sleep} (unsigned int seconds)
+\item 
+int \hyperlink{lib__grupo1_8h_a20f8bcbffba7f47b6151297cec1d111e}{jugar} (float tiempo\+\_\+preparacion, float tiempo\+\_\+lectura)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{lib__grupo1_8h_a20f8bcbffba7f47b6151297cec1d111e}\label{lib__grupo1_8h_a20f8bcbffba7f47b6151297cec1d111e}} 
+\index{lib\+\_\+grupo1.\+h@{lib\+\_\+grupo1.\+h}!jugar@{jugar}}
+\index{jugar@{jugar}!lib\+\_\+grupo1.\+h@{lib\+\_\+grupo1.\+h}}
+\subsubsection{\texorpdfstring{jugar()}{jugar()}}
+{\footnotesize\ttfamily int jugar (\begin{DoxyParamCaption}\item[{float}]{tiempo\+\_\+preparacion,  }\item[{float}]{tiempo\+\_\+lectura }\end{DoxyParamCaption})}
+
+
+
+Definition at line 36 of file funciones\+\_\+gr1.\+cpp.
+
+
+\begin{DoxyCode}
+37 \{
+38     \textcolor{keyword}{struct }termios tty;
+39         \textcolor{keywordtype}{int} serial\_port;
+40     
+41     \hyperlink{tty__lib2_8h_af4b26b32c3c509fa307419652482c659}{config\_tty} (\textcolor{stringliteral}{"/dev/ttyS0"}, &tty, B9600, &serial\_port);
+42 
+43         \textcolor{keywordtype}{int} read\_buf;
+44         \textcolor{keywordtype}{int} num\_bytes;
+45     
+46     \hyperlink{lib__grupo1_8h_a69c97039c9ec10a30e5edbdf365e3bbd}{sleep}(2);
+47     write(serial\_port, \textcolor{stringliteral}{"s"}, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})); \textcolor{comment}{//Amarillo}
+48         \hyperlink{lib__grupo1_8h_a69c97039c9ec10a30e5edbdf365e3bbd}{sleep}(tiempo\_preparacion);
+49  
+50         write(serial\_port, \textcolor{stringliteral}{"r"}, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})); \textcolor{comment}{//Verde}
+51         \hyperlink{lib__grupo1_8h_a69c97039c9ec10a30e5edbdf365e3bbd}{sleep}(tiempo\_lectura);
+52  
+53         write(serial\_port, \textcolor{stringliteral}{"S"}, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})); \textcolor{comment}{//Rojo}
+54 
+55         num\_bytes = read(serial\_port, &read\_buf, \textcolor{keyword}{sizeof}(read\_buf));
+56 
+57         close(serial\_port);
+58 
+59     \textcolor{keywordflow}{return} read\_buf;
+60 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{lib__grupo1_8h_a69c97039c9ec10a30e5edbdf365e3bbd}\label{lib__grupo1_8h_a69c97039c9ec10a30e5edbdf365e3bbd}} 
+\index{lib\+\_\+grupo1.\+h@{lib\+\_\+grupo1.\+h}!sleep@{sleep}}
+\index{sleep@{sleep}!lib\+\_\+grupo1.\+h@{lib\+\_\+grupo1.\+h}}
+\subsubsection{\texorpdfstring{sleep()}{sleep()}}
+{\footnotesize\ttfamily unsigned int sleep (\begin{DoxyParamCaption}\item[{unsigned int}]{seconds }\end{DoxyParamCaption})}
+
